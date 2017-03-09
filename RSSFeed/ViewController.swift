@@ -10,9 +10,27 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    @IBOutlet var myView: UIView!
+    
+    @IBOutlet weak var userNameText: UITextField!
+    
+    @IBOutlet weak var passWordText: UITextField!
+    
+    @IBOutlet weak var loginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        
+        let frame = userNameText.frame
+        userNameText.frame = CGRectZero
+        UIView.animateWithDuration(2, animations: {
+            
+            self.userNameText.frame = frame
+        })
+   
+     
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,5 +39,11 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func loginButton(sender: UIButton) {
+
+//        let secondViewController = self.storyboard?.instantiateViewControllerWithIdentifier("3")
+//        
+//        self.navigationController?.pushViewController(secondViewController!, animated: true)
+    }
 }
 
